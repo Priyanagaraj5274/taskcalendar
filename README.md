@@ -144,76 +144,115 @@ taskcalendar/
 
 ### Prerequisites
 - Node.js (v14 or higher)
+  
 - MongoDB Atlas account
+  
 - Gmail account for email reminders
 
 ### Local Installation
 
 1. **Clone the repository**
-   ```bash
+  
    git clone https://github.com/Priyanagaraj5274/taskcalendar.git
+   
    cd taskcalendar
-2. Install backend dependencies
+   
+3. Install backend dependencies
+   
    cd backend
+   
    npm install
    
-3. Set up environment variables
+4. Set up environment variables
 
     Create a .env file in the backend folder:
-    text
+   
     PORT=5000
+   
     MONGODB_URI=your_mongodb_connection_string
+   
     JWT_SECRET=your_super_secret_key
+   
     JWT_EXPIRE=7d
+   
     EMAIL_USER=your_gmail@gmail.com
+   
     EMAIL_PASS=your_16_digit_app_password
    
-4. Start the backend server
+5. Start the backend server
+   
      npm run dev
 
-5. Open the frontend
+6. Open the frontend
+   
   Open frontend/index.html in your browser
+  
   Or use Live Server in VS Code
    
 ☁️ Live Deployment
+
 Component	URL
+
 Frontend (Vercel) :	https://taskcalendar-eta.vercel.app
+
 Backend API (Render): https://taskcalendar-api.onrender.com
+
 API Test Endpoint :	https://taskcalendar-api.onrender.com/api/auth/test
 
 📧 Email Configuration
+
 To enable email reminders in your own deployment:
+
 Enable 2-Factor Authentication on your Gmail account
+
 Generate an App Password at: https://myaccount.google.com/apppasswords
+
 Select: App = "Mail", Device = "Windows Computer"
+
 Copy the 16-digit password
+
 Add it to your .env file as EMAIL_PASS
 
+
 🤝 Contributing
+
 Contributions, issues, and feature requests are welcome!
+
 Fork the project
+
 Create your feature branch (git checkout -b feature/AmazingFeature)
+
 Commit your changes (git commit -m 'Add some AmazingFeature')
+
 Push to the branch (git push origin feature/AmazingFeature)
+
 Open a Pull Request
 
 📝 License
+
 This project is free to use for learning and portfolio purposes.
 
 👩‍💻 Author
+
 Priya N
 GitHub: @Priyanagaraj5274
 
 🌟 Show Your Support
+
 If you found this project helpful, please consider giving it a ⭐ on GitHub!
 
 🙏 Acknowledgments
+
 FullCalendar.io for the amazing calendar library
+
 Font Awesome for beautiful icons
+
 Render and Vercel for free hosting
+
 MongoDB Atlas for the free database tier
 
 Built with ❤️ using Node.js, Express, MongoDB, and vanilla JavaScript
+
 
 
 
