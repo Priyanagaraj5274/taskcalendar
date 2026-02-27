@@ -1,0 +1,1079 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    display: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container.active {
+    display: block;
+}
+
+/* Authentication Styles */
+.auth-card {
+    padding: 40px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.auth-header h2 {
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.auth-header p {
+    color: #666;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.auth-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    background: #f0f0f0;
+    padding: 5px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    background: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+    background: white;
+    color: #667eea;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.auth-form {
+    display: none;
+}
+
+.auth-form.active {
+    display: block;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.auth-btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.auth-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Navigation Bar */
+.navbar {
+    background: white;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #f0f0f0;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.nav-brand {
+    font-size: 24px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-user {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+#user-name {
+    font-weight: 500;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.btn-logout {
+    padding: 8px 16px;
+    background: #f0f0f0;
+    border: none;
+    border-radius: 6px;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-logout:hover {
+    background: #ff4444;
+    color: white;
+}
+
+/* Theme Toggle Button */
+.btn-theme {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+body:not(.dark-mode) .btn-theme {
+    color: #667eea;
+    background: #f0f0f0;
+}
+
+body.dark-mode .btn-theme {
+    color: #ffd700;
+    background: #2d2d44;
+}
+
+.btn-theme:hover {
+    transform: scale(1.1);
+}
+/* Search and Filter Styles */
+.search-filter {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.search-input {
+    flex: 2;
+    min-width: 200px;
+    padding: 10px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.filter-select {
+    flex: 1;
+    min-width: 120px;
+    padding: 10px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+/* Dark mode styles */
+body.dark-mode .search-input,
+body.dark-mode .filter-select {
+    background: #2d2d44;
+    border-color: #3d3d5c;
+    color: #ffffff;
+}
+
+body.dark-mode .search-input::placeholder {
+    color: #888;
+}
+
+body.dark-mode .filter-select option {
+    background: #2d2d44;
+    color: #ffffff;
+}
+
+/* Dashboard Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 30px;
+}
+
+.stat-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid #f0f0f0;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.stat-card.overdue {
+    background: #fff5f5;
+    border-color: #ffcdd2;
+}
+
+.stat-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+}
+
+.stat-card.overdue .stat-icon {
+    background: #ff4444;
+}
+
+.stat-info h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+.stat-info p {
+    color: #666;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+/* Main Grid Layout */
+.main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 0 30px 30px;
+}
+
+/* Calendar Section */
+.calendar-section {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-header h3 {
+    color: #333;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.view-selector {
+    display: flex;
+    gap: 5px;
+    background: #f0f0f0;
+    padding: 3px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.view-btn {
+    padding: 6px 12px;
+    border: none;
+    background: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.view-btn.active {
+    background: white;
+    color: #667eea;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Calendar Customization */
+.fc {
+    font-size: 14px;
+}
+
+.fc-toolbar-title {
+    font-size: 18px !important;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.fc-button {
+    background: #f0f0f0 !important;
+    border: none !important;
+    color: #666 !important;
+    box-shadow: none !important;
+    padding: 6px 12px !important;
+    font-size: 14px !important;
+    transition: background-color 0.3s ease, color 0.3s ease !important;
+}
+
+.fc-button-active {
+    background: #667eea !important;
+    color: white !important;
+}
+
+.fc-day-today {
+    background: #f0f4ff !important;
+    transition: background-color 0.3s ease;
+}
+
+/* Tasks Section */
+.tasks-section {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-primary {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+}
+
+.tasks-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.task-item {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border-left: 4px solid #667eea;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: slideIn 0.3s ease;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.task-item.completed {
+    opacity: 0.7;
+    border-left-color: #4caf50;
+}
+
+.task-item.completed .task-title {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.task-item.priority-high {
+    border-left-color: #ff4444;
+}
+
+.task-item.priority-medium {
+    border-left-color: #ffbb33;
+}
+
+.task-item.priority-low {
+    border-left-color: #00C851;
+}
+
+.task-content {
+    flex: 1;
+}
+
+.task-title {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+.task-datetime {
+    font-size: 12px;
+    color: #666;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.task-datetime i {
+    margin-right: 5px;
+    color: #667eea;
+}
+
+/* ========== CATEGORY BADGES - FIXED WITH !IMPORTANT ========== */
+.task-item .category-badge {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-left: 8px;
+}
+
+.task-item .category-work {
+    background: #e3f2fd !important;
+    color: #1976d2 !important;
+}
+
+.task-item .category-personal {
+    background: #e8f5e8 !important;
+    color: #2e7d32 !important;
+}
+
+.task-item .category-shopping {
+    background: #fff3e0 !important;
+    color: #f57c00 !important;
+}
+
+.task-item .category-health {
+    background: #fce4ec !important;
+    color: #c2185b !important;
+}
+
+.task-item .category-other {
+    background: #f3e5f5 !important;
+    color: #7b1fa2 !important;
+}
+
+/* Dark mode category badges - with !important */
+body.dark-mode .task-item .category-work {
+    background: #1a3a4a !important;
+    color: #90caf9 !important;
+}
+
+body.dark-mode .task-item .category-personal {
+    background: #1a3a1a !important;
+    color: #a5d6a7 !important;
+}
+
+body.dark-mode .task-item .category-shopping {
+    background: #4a3a1a !important;
+    color: #ffb74d !important;
+}
+
+body.dark-mode .task-item .category-health {
+    background: #4a1a2a !important;
+    color: #f48fb1 !important;
+}
+
+body.dark-mode .task-item .category-other {
+    background: #3a1a4a !important;
+    color: #ce93d8 !important;
+}
+
+/* Task Actions */
+.task-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.task-actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+.task-actions .complete-btn {
+    color: #4caf50;
+}
+
+.task-actions .edit-btn {
+    color: #667eea;
+}
+
+.task-actions .delete-btn {
+    color: #ff4444;
+}
+
+.task-actions button:hover {
+    opacity: 0.7;
+}
+
+.empty-state {
+    text-align: center;
+    color: #999;
+    padding: 40px 20px;
+    font-style: italic;
+    transition: color 0.3s ease;
+}
+
+/* ========== FIXED MODAL STYLES ========== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 550px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: modalSlideIn 0.3s ease;
+    max-height: 90vh;
+    overflow-y: auto;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.modal-header h3 {
+    color: #333;
+    font-size: 22px;
+    transition: color 0.3s ease;
+}
+
+.close {
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #999;
+    transition: color 0.3s ease;
+    line-height: 1;
+}
+
+.close:hover {
+    color: #333;
+}
+
+#task-form {
+    display: block;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid #f0f0f0;
+}
+
+.btn-secondary {
+    padding: 12px 24px;
+    background: #f0f0f0;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: #e0e0e0;
+}
+
+/* ========== DARK MODE STYLES ========== */
+body.dark-mode {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+body.dark-mode .container,
+body.dark-mode .navbar,
+body.dark-mode .calendar-section,
+body.dark-mode .tasks-section,
+body.dark-mode .auth-card {
+    background: #1e1e2f;
+    color: #ffffff;
+}
+
+body.dark-mode .navbar {
+    border-bottom-color: #2d2d44;
+}
+
+body.dark-mode .stat-card {
+    background: #2d2d44;
+    border-color: #3d3d5c;
+    color: #ffffff;
+}
+
+body.dark-mode .stat-card.overdue {
+    background: #3d2d44;
+    border-color: #ff4444;
+}
+
+body.dark-mode .stat-info h3,
+body.dark-mode .stat-info p,
+body.dark-mode .section-header h3,
+body.dark-mode #user-name,
+body.dark-mode .auth-header h2,
+body.dark-mode .auth-header p {
+    color: #ffffff;
+}
+
+body.dark-mode .form-group label {
+    color: #b8b8b8;
+}
+
+body.dark-mode .form-group input,
+body.dark-mode .form-group textarea,
+body.dark-mode .form-group select {
+    background: #2d2d44;
+    color: #ffffff;
+    border-color: #3d3d5c;
+}
+
+body.dark-mode .form-group input:focus,
+body.dark-mode .form-group textarea:focus,
+body.dark-mode .form-group select:focus {
+    border-color: #667eea;
+}
+
+body.dark-mode .form-group input::placeholder,
+body.dark-mode .form-group textarea::placeholder {
+    color: #888;
+}
+
+body.dark-mode .auth-tabs {
+    background: #2d2d44;
+}
+
+body.dark-mode .tab-btn {
+    color: #b8b8b8;
+}
+
+body.dark-mode .tab-btn.active {
+    background: #1e1e2f;
+    color: #667eea;
+}
+
+body.dark-mode .task-item {
+    background: #2d2d44;
+    border-left-color: #667eea;
+}
+
+body.dark-mode .task-item.completed {
+    background: #252538;
+}
+
+body.dark-mode .task-item.completed .task-title {
+    color: #888;
+}
+
+body.dark-mode .task-title {
+    color: #ffffff;
+}
+
+body.dark-mode .task-datetime {
+    color: #b8b8b8;
+}
+
+body.dark-mode .task-datetime i {
+    color: #667eea;
+}
+
+/* Dark mode for other elements */
+body.dark-mode .empty-state {
+    color: #888;
+}
+
+/* Dark mode modal styles */
+body.dark-mode .modal-content {
+    background: #1e1e2f;
+    color: #ffffff;
+}
+
+body.dark-mode .modal-header {
+    border-bottom-color: #2d2d44;
+}
+
+body.dark-mode .modal-header h3 {
+    color: #ffffff;
+}
+
+body.dark-mode .close {
+    color: #b8b8b8;
+}
+
+body.dark-mode .close:hover {
+    color: #ffffff;
+}
+
+body.dark-mode .modal-footer {
+    border-top-color: #2d2d44;
+}
+
+body.dark-mode .btn-secondary {
+    background: #2d2d44;
+    color: #ffffff;
+}
+
+body.dark-mode .btn-secondary:hover {
+    background: #3d3d5c;
+}
+
+body.dark-mode .fc {
+    color: #ffffff;
+}
+
+body.dark-mode .fc-toolbar-title {
+    color: #ffffff !important;
+}
+
+body.dark-mode .fc-button {
+    background: #2d2d44 !important;
+    color: #ffffff !important;
+    border-color: #3d3d5c !important;
+}
+
+body.dark-mode .fc-button:hover {
+    background: #3d3d5c !important;
+}
+
+body.dark-mode .fc-button-active {
+    background: #667eea !important;
+    color: white !important;
+}
+
+body.dark-mode .fc-day-today {
+    background: #2d2d44 !important;
+}
+
+body.dark-mode .fc-daygrid-day-number,
+body.dark-mode .fc-col-header-cell-cushion {
+    color: #ffffff;
+}
+
+body.dark-mode .view-selector {
+    background: #2d2d44;
+}
+
+body.dark-mode .view-btn {
+    color: #b8b8b8;
+}
+
+body.dark-mode .view-btn.active {
+    background: #1e1e2f;
+    color: #667eea;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .main-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-content {
+        margin: 20px auto;
+        padding: 20px;
+        width: 95%;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .auth-card {
+        padding: 20px;
+    }
+
+    .nav-user {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .modal-footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .btn-secondary,
+    .btn-primary {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .task-datetime {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .task-item .category-badge {
+        margin-left: 0;
+    }
+}
+/* Global Search Styles */
+.global-search-container {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 0 30px 20px 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.global-search {
+    display: flex;
+    align-items: center;
+    background: #f5f5f5;
+    border-radius: 8px;
+    padding: 5px 15px;
+    margin-bottom: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.search-icon {
+    color: #999;
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.global-search-input {
+    flex: 1;
+    padding: 12px 0;
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    outline: none;
+    color: #333;
+}
+
+.search-filters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.search-results-info {
+    margin: 0 30px 10px 30px;
+    font-size: 14px;
+    color: #666;
+    font-weight: 500;
+}
+
+/* Dark mode styles */
+body.dark-mode .global-search-container {
+    background: #1e1e2f;
+}
+
+body.dark-mode .global-search {
+    background: #2d2d44;
+}
+
+body.dark-mode .global-search-input {
+    color: #ffffff;
+}
+
+body.dark-mode .global-search-input::placeholder {
+    color: #888;
+}
+
+body.dark-mode .search-results-info {
+    color: #b8b8b8;
+}
+/* Recurrence Styles */
+#task-recurring {
+    width: auto;
+    margin-right: 10px;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+#recurrence-options {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.recurrence-hint {
+    display: block;
+    color: #666;
+    font-size: 12px;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+/* Dark mode */
+body.dark-mode #recurrence-options {
+    background: #2d2d44;
+}
+
+body.dark-mode .recurrence-hint {
+    color: #b8b8b8;
+}
+.recurrence-icon {
+    color: #667eea;
+    font-size: 14px;
+    margin-left: 8px;
+    opacity: 0.8;
+}
+
+body.dark-mode .recurrence-icon {
+    color: #90caf9;
+}
