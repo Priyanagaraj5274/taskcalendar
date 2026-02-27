@@ -15,9 +15,13 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// Enable CORS
+// Enable CORS - Updated with live frontend URL
 app.use(cors({
-    origin: ['http://127.0.0.1:5500', 'http://localhost:5500'],
+    origin: [
+        'http://127.0.0.1:5500', 
+        'http://localhost:5500',
+        'https://taskcalendar-eta.vercel.app'  // Your live frontend URL
+    ],
     credentials: true
 }));
 
